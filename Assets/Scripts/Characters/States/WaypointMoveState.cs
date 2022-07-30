@@ -21,7 +21,7 @@ public class WaypointMoveState : State
         if (nextStage != null)
         {
             _agent.SetDestination(nextStage.Start.position);
-            stateMachine.Animator.SetFloat("run", 0);
+            stateMachine.Animator.SetTrigger("run");
         }
 
         base.Enter(stateMachine);

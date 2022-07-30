@@ -1,3 +1,5 @@
+using Cinemachine;
+
 using System;
 
 using UnityEngine;
@@ -11,7 +13,8 @@ public enum LevelState : short
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    [SerializeField] private Player _player;
+    [SerializeField] private CinemachineVirtualCamera _camera; 
     [SerializeField] private Stage[] _stages;
 
     private int _currentStageIndex;
@@ -43,7 +46,9 @@ public class Level : MonoBehaviour
         {
             _currentStageIndex = 0;
             var currentStagePosition = CurrentStage.transform.position;
-            Instantiate(_player, currentStagePosition, Quaternion.identity);
+            var player = Instantiate(_player, currentStagePosition, Quaternion.identity);
+            _camera.LookAt = player.transform;
+            _camera.Follow = player.transform;
         }
     }
 

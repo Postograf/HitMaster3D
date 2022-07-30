@@ -18,6 +18,7 @@ public class HealthContainer : MonoBehaviour
         {
             _health = 0;
             Died?.Invoke();
+            Destroy(gameObject);
         }
             
         Damaged?.Invoke(_health);

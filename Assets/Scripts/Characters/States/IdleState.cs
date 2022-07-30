@@ -6,7 +6,7 @@ public class IdleState : State
 {
     private void OnEnable()
     {
-        StateMachine.Animator.SetTrigger("setup");
+        StateMachine.Animator.SetTrigger("idle");
     }
 
     private void Update()
