@@ -8,7 +8,6 @@ public abstract class StateMachine : MonoBehaviour
     [SerializeField] protected State _firstState;
     
     public State CurrentState { get; protected set; }
-    public Rigidbody Rigidbody { get; protected set; }
     public Animator Animator { get; protected set; }
     static public Player Player { get; protected set; }
 
