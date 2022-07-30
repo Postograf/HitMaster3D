@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.collider.TryGetComponent<HealthContainer>(out var health))
         {
-            health.TakeDamage(_damage);
+            health.TakeDamage(_damage, _rigidbody.velocity, transform.position);
         }
 
         BulletSpawner.Instance.Return(this);
